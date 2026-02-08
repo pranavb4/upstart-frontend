@@ -1,0 +1,355 @@
+:root {
+  --primary: #5B2E91; /* Deep Purple */
+  --secondary: #9C27B0;
+  --bg-dark: #120d26;
+  --text-light: #ffffff;
+  --card-bg: #1e163b;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Auth Pages */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.auth-box {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: #2a2049;
+  border: 1px solid #4a3b75;
+  color: white;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Dashboard */
+.dashboard {
+  padding: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Notes Section */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.note-card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid var(--secondary);
+}
+
+.navbar {
+  background: var(--card-bg);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Meme Zone Styles */
+.meme-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.meme-header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.meme-img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain; /* Ensures whole meme is visible */
+  background: black;
+}
+
+.meme-actions {
+  padding: 10px 15px;
+  display: flex;
+  gap: 15px;
+  border-top: 1px solid #332a55;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+}
+
+.action-btn.liked {
+  color: #E91E63; /* Pink for liked */
+}
+
+.comments-section {
+  padding: 10px 15px;
+  background: #17112e;
+  border-top: 1px solid #332a55;
+}
+
+.comment-input {
+  width: 75%;
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+  background: #2a2049;
+  color: white;
+  margin-right: 10px;
+}
+
+/* Discussion / Chat Layout */
+.chat-container {
+  display: flex;
+  height: 85vh;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.channels-sidebar {
+  width: 250px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.channel-btn {
+  text-align: left;
+  background: transparent;
+  padding: 12px 15px;
+  border-radius: 10px;
+  color: #ccc;
+  transition: 0.2s;
+}
+
+.channel-btn:hover, .channel-btn.active {
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+}
+
+.chat-window {
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.messages-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #17112e; /* Slightly darker than card */
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.message-bubble.mine {
+  align-self: flex-end;
+  background: var(--secondary); /* Purple for me */
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+
+.message-bubble.others {
+  align-self: flex-start;
+  background: #332a55; /* Dark grey for others */
+  color: #ddd;
+  border-bottom-left-radius: 2px;
+}
+
+.message-info {
+  font-size: 0.75rem;
+  margin-bottom: 4px;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.chat-input-area {
+  padding: 15px;
+  background: var(--card-bg);
+  border-top: 1px solid #332a55;
+  display: flex;
+  gap: 10px;
+}
+
+/* --- THEME VARIABLES --- */
+/* Default (Dark Mode) */
+:root {
+  --bg-color: #120d26;
+  --card-bg: #1e163b;
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --input-bg: #2a2049;
+  --border-color: #4a3b75;
+}
+
+/* Light Mode Overrides (Applied when body has class 'light-mode') */
+body.light-mode {
+  --bg-color: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --input-bg: #e0e0e0;
+  --border-color: #cccccc;
+}
+
+/* Apply variables to elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.auth-box, .stat-card, .note-card, .meme-card, .channel-btn, .navbar, .chat-window, .channels-sidebar {
+  background: var(--card-bg) !important; /* Force override */
+  color: var(--text-primary);
+  transition: background 0.3s;
+}
+
+.channel-btn:hover {
+  background: var(--primary) !important;
+  color: white !important;
+}
+
+input, select {
+  background: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+/* Notification Styles */
+.nav-icon-container {
+  position: relative;
+  cursor: pointer;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.notif-badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background: #ff4444;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.notif-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 300px;
+  background: var(--card-bg);
+  border: 1px solid #444;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.notif-item {
+  padding: 12px;
+  border-bottom: 1px solid #332a55;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.notif-item:hover {
+  background: #332a55;
+}
+
+.notif-item.unread {
+  background: #2a2049; /* Slightly lighter/different to show unread */
+  border-left: 4px solid #9C27B0;
+}
+
+.notif-empty {
+  padding: 20px;
+  text-align: center;
+  color: #aaa;
+}
